@@ -1,0 +1,186 @@
+body{
+    background-color: #eee !important;
+    font-family: 'Quicksand', sans-serif !important;
+}
+body::-webkit-scrollbar{
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: grey;
+    border-radius: 7px;
+}
+.foto{
+    background-image: url('../assests/Fondo\ Portafolio.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 1080px;
+}
+
+.nombre,
+.profecion{
+    color: white;
+    position: absolute;
+}
+
+.nombre{
+    margin-top: 450px;
+    margin-left: 350px;
+}
+
+.profecion{
+    margin-top: 510px;
+    margin-left: 350px;
+    color: rgb(161, 161, 161);
+}
+
+/* .foto1{
+    height: 400px;
+    width: 540px;
+} */
+
+.iconos{
+    font-size: medium;
+}
+
+.icon{
+    padding: 25px 35px;
+}
+
+.boton-contactame{
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    padding: 14px 30px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+
+.boton-contactame:hover{
+    text-decoration: none;
+    background-color: transparent;
+    color: #000000;
+}
+
+p{
+    line-height: 1.75;
+    font-weight: 500;
+    
+}
+
+
+.red{
+    border: solid red;
+}
+
+.grey{
+    background-color: rgba(0,0,0,0.05);
+    
+}
+
+.frase-inicio{
+    position: relative;
+    padding: 2.5em 2.5em;
+    background: rgba(0,0,0,0.05);
+    text-align: left;
+    margin: 0 auto 30px;
+    line-height: 59px;
+    font-size: 38px;
+    font-family: 'Playfair Display';
+    color: #000000;
+}
+
+@media (max-width:600px){
+    .nombre{
+        margin-top: 0;
+        margin-left: 0;
+        width: 80%;
+        position:relative;
+        top: 100px;
+        left: 50px;
+        
+    }
+    
+    .profecion{
+        margin-top: 0;
+        margin-left: 0;
+        color: rgb(161, 161, 161);
+        width: 80%;
+        position:relative;
+        top: 100px;
+        left: 50px;
+        
+    }
+
+    .foto{
+        background-image: url('../assests/Fondo_portafolio_celular.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 915px;
+    }
+    
+}
+
+@media (min-width: 601px) and (max-width:950px){
+    .nombre{
+        margin-top: 0;
+        margin-left: 0;
+        width: 80%;
+        position:relative;
+        top: 150px;
+        left: 80px;
+        
+    }
+    
+    .profecion{
+        margin-top: 0;
+        margin-left: 0;
+        color: rgb(161, 161, 161);
+        width: 80%;
+        position:relative;
+        top: 150px;
+        left: 80px;
+        
+    }
+    .foto{
+        background-image: url('../assests/Fondo_portafolio_tabletas.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 1180px;
+    }
+}
+
+@media (min-width: 951px) and (max-width:1350px){
+    .nombre{
+        margin-top: 0;
+        margin-left: 0;
+        width: 80%;
+        position:relative;
+        top: 370px;
+        left: 40px;
+        
+    }
+    
+    .profecion{
+        margin-top: 0;
+        margin-left: 0;
+        color: rgb(161, 161, 161);
+        width: 80%;
+        position:relative;
+        top: 370px;
+        left: 40px;
+        
+    }
+    .foto{
+        background-image: url('../assests/Foto_portafolio_raro.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 820px;
+    }
+}
+
+
