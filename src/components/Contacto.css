@@ -63,3 +63,12 @@
     color:#000000;
 }
 
+.redes-contacto{
+    text-decoration: none;
+    color: #9ba0a3;
+}
+
+.redes-contacto:hover{
+    color: black;
+}
+

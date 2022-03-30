@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Proyectos.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3Alt, faJs, faPython, faReact, faNodeJs, faGitSquare, faGithub, faBootstrap } from '@fortawesome/free-brands-svg-icons'
@@ -282,7 +283,7 @@ function Proyectos() {
 
               <br></br>
 
-              <a href='/Contacto' className='boton-contactame'>Contacto</a>
+              <Link to='/Contacto' className='boton-contactame'>Contacto</Link>
             </div> 
           </div>
 

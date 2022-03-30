@@ -4,7 +4,7 @@ import imagen2 from '../assests/Relleno3.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3Alt, faJs, faPython, faReact, faNodeJs, faGitSquare, faGithub, faBootstrap } from '@fortawesome/free-brands-svg-icons'
 import { faTerminal } from '@fortawesome/free-solid-svg-icons'
-
+import { Link } from 'react-router-dom'
 function Inicio() {
   return (
     <div>
@@ -98,7 +98,7 @@ function Inicio() {
   
               <p>Si te gusta mi perfil o mi trabajo y tienes alguna propuesta no dudes en contactarme, tengo interés en proyectos para seguir creciendo en mi camino como desarrollador.</p>
               <br></br>
-              <a href='/Contacto' className='boton-contactame'>Contacto</a>
+              <Link to='/Contacto' className='boton-contactame'>Contacto</Link>
             </div>
           </div>
 
