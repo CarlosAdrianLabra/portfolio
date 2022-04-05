@@ -1,7 +1,39 @@
-import React from 'react'
+import React, {useRef, useState} from 'react'
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 import './Contacto.css'
 
 function Contacto() {
+
+  const [captchaValido, cambiarCaptchaValido] = useState(null);
+
+  const captcha = useRef(null);
+
+  const enviarEmail = (e) => {
+    e.preventDefault();
+    if(captcha.current.getValue()){
+
+      emailjs.sendForm('service_9vh378c', 'template_tqnsjs9', e.target, 'bueHvVSYOiQgVs5D0')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        e.target.reset()
+      cambiarCaptchaValido(true);
+
+    }else{
+      cambiarCaptchaValido(false);
+    }
+  }
+
+  const onChange = () => {
+    if(captcha.current.getValue()){
+      cambiarCaptchaValido(true);
+    }
+  }
+
+
   return (
     <div>
       <div className='header'>
@@ -26,17 +58,24 @@ function Contacto() {
           </div>
 
           <div className='col-md-6 .offset-md-3'>
-            <form>
+            <form onSubmit={enviarEmail}>
               <label for="exampleFormControlInput1" className="form-label">Nombre:</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre"></input>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" name='name' required="required"></input>
               <br></br>
               <label for="exampleFormControlInput1" className="form-label">Email:</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com"></input>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com" name='email' required="required"></input>
               <br></br>
               <label for="exampleFormControlTextarea1" className="form-label">Comentario:</label>
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name='message' required="required"></textarea>
               <br></br>
-              <button className='boton-submit'>Enviar</button>
+              <ReCAPTCHA
+                ref={captcha}
+                sitekey="6LeF9EcfAAAAANQYKMtKfCwbJJ85T7I35B0Ba_sq"
+                onChange={onChange}
+              />
+              {captchaValido === false && <div className='error-captcha'>Porfavor acepta el captcha</div>}
+              <br></br>
+              <button className='boton-submit' type='submit'>Enviar</button>
             </form>
           </div>
 
